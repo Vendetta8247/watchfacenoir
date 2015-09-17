@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="analog_background">#151214</color>
+    <color name="totally_black">#222222</color>
+    <color name="analog_hands">#666666</color>
+    <color name="analog_seconds_hand">#dddddd</color>
+    <color name="oulined_hands">#777777</color>
+    <color name="analog_color_white">#EDEDED</color>
+
+    <color name="light_gray">#aaaaaa</color>
+</resources>
