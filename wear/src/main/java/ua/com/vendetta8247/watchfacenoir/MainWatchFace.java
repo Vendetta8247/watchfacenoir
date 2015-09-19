@@ -110,6 +110,7 @@ public class MainWatchFace extends CanvasWatchFaceService {
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
             setWatchFaceStyle(new WatchFaceStyle.Builder(MainWatchFace.this)
+                    .setAcceptsTapEvents(true)
                     .setCardPeekMode(WatchFaceStyle.PEEK_MODE_SHORT)
                     .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
                     .setShowSystemUiTime(false)
