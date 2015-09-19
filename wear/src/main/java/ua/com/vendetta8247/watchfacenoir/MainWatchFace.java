@@ -34,6 +34,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.wearable.watchface.CanvasWatchFaceService;
+import android.support.wearable.watchface.WatchFaceService;
 import android.support.wearable.watchface.WatchFaceStyle;
 import android.text.format.Time;
 import android.view.Gravity;
@@ -87,6 +88,9 @@ public class MainWatchFace extends CanvasWatchFaceService {
         boolean mAmbient;
         Time mTime;
 
+        boolean clicked;
+        int transparentColor = 0x00000000;
+
         final Handler mUpdateTimeHandler = new EngineHandler(this);
 
         final BroadcastReceiver mTimeZoneReceiver = new BroadcastReceiver() {
@@ -104,6 +108,26 @@ public class MainWatchFace extends CanvasWatchFaceService {
          */
         boolean mLowBitAmbient;
 
+
+        @Override
+        public void onTapCommand(int tapType, int x, int y, long eventTime) {
+            switch (tapType) {
+                case WatchFaceService.TAP_TYPE_TAP:
+                    clicked = !clicked;
+                    System.out.println("Tapped at " + x + ":" + y + " at " + eventTime + "\nClicked: " + clicked);
+                    invalidate();
+                    if(transparentColor==0xdd000000&&!clicked)
+                        transparentColor = 0x00000000;
+                    System.out.println(transparentColor);
+                    break;
+                default:
+                    super.onTapCommand(tapType, x, y, eventTime);
+                    break;
+            }
+
+
+
+        }
 
 
         @Override
@@ -572,6 +596,16 @@ public class MainWatchFace extends CanvasWatchFaceService {
                 canvas.drawCircle(centerX, centerY, 4, mBackgroundPaint);
                 canvas.drawCircle(centerX, centerY, 3, mHandPaint);
                 canvas.drawCircle(centerX, centerY, 1, mBackgroundPaint);
+            }
+
+            if(!mAmbient&&clicked)
+            {
+                Paint transPaint = new Paint();
+                if(transparentColor!=0xbb000000)
+                transparentColor += 0x11000000;
+                invalidate();
+                transPaint.setColor(transparentColor);
+                canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), transPaint);
             }
 
         }
