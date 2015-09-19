@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "21.1.1"
 
     defaultConfig {
         applicationId "ua.com.vendetta8247.watchfacenoir"
-        minSdkVersion 21
-        targetSdkVersion 21
+        minSdkVersion 22
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
