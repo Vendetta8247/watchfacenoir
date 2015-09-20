@@ -706,8 +706,8 @@ public class MainWatchFace extends CanvasWatchFaceService {
 
                             else
                             {
-                                canvas.drawText("Последняя", centerX - (centerX / 9) * 8, centerY - centerY / 4, mTextPaint);
-                                canvas.drawText("пара", centerX - (centerX / 4)*3, centerY, mTextPaint);
+                                canvas.drawText("На сегодня", centerX - (centerX / 10) * 9, centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("хватит", centerX - (centerX / 6)*5, centerY, mTextPaint);
                                 canvas.drawText("☺", centerX - (centerX / 2), centerY + centerY/4, mTextPaint);
 
                                 canvas.drawText("Отдыхай", centerX + (centerX / 7), centerY - centerY / 4, mTextPaint);
