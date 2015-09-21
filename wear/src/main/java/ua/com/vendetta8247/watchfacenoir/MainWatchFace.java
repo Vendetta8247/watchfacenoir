@@ -624,7 +624,7 @@ public class MainWatchFace extends CanvasWatchFaceService {
                     */
 
                     System.out.println(mTime.hour+":"+ mTime.minute);
-                    System.out.println("subtract: " + subtractDates("8:40:00"));
+                    //System.out.println("subtract: " + subtractDates("8:40:00"));
 
                     if(mTime.weekDay!=6 && mTime.weekDay !=0)
                     {
@@ -635,14 +635,17 @@ public class MainWatchFace extends CanvasWatchFaceService {
                         {
                             canvas.drawText(subtractDates("8:40:00"), centerX - (centerX / 4) * 3, centerY + centerY / 4, mTextPaint);
                         }
-                        mTextPaint.setTextSize(24);
-                        canvas.drawText("До следующей", centerX - (centerX / 12) * 11, centerY - centerY / 4, mTextPaint);
-                        mTextPaint.setTextSize(30);
-                        canvas.drawText("пары", centerX - (centerX / 3)*2, centerY, mTextPaint);
 
                         if(mTime.weekDay == 1)
                         {
                             if(mTime.hour < 8 || (mTime.hour==8 && mTime.minute<40)) {
+
+                                mTextPaint.setTextSize(24);
+                                canvas.drawText("До следующей", centerX - (centerX / 12) * 11, centerY - centerY / 4, mTextPaint);
+                                mTextPaint.setTextSize(30);
+                                canvas.drawText("пары", centerX - (centerX / 3)*2, centerY, mTextPaint);
+
+
                                 canvas.drawText("Бизнес", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
                                 canvas.drawText("42", centerX + (centerX / 3), centerY, mTextPaint);
                                 canvas.drawText("Затонацька", centerX + (centerX / 10), centerY + centerY/4, mTextPaint);
@@ -661,7 +664,7 @@ public class MainWatchFace extends CanvasWatchFaceService {
                             else if (mTime.hour==10&&mTime.minute<35&&mTime.minute>=15)
                             {
 
-                                canvas.drawText("Перемена", centerX - (centerX / 2), centerY, mTextPaint);
+                                canvas.drawText("Перемена", centerX - (centerX / 8)*7, centerY, mTextPaint);
                                 canvas.drawText(subtractDates("10:35:00"), centerX - (centerX / 4) * 3, centerY + centerY / 4, mTextPaint);
 
 
@@ -677,26 +680,26 @@ public class MainWatchFace extends CanvasWatchFaceService {
                                 canvas.drawText("Стецюк", centerX - (centerX / 6) * 5, centerY + centerY/4, mTextPaint);
 
                                 canvas.drawText("Экономика", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
-                                canvas.drawText("40", centerX + (centerX / 2), centerY, mTextPaint);
+                                canvas.drawText("40", centerX + (centerX / 3), centerY, mTextPaint);
                                 canvas.drawText("Отрошко", centerX + (centerX / 7), centerY + centerY/4, mTextPaint);
                             }
 
                             else if (mTime.hour==12&&mTime.minute<20&&mTime.minute>=10)
                             {
 
-                                canvas.drawText("Перемена", centerX - (centerX / 2), centerY, mTextPaint);
+                                canvas.drawText("Перемена", centerX - (centerX / 8)*7, centerY, mTextPaint);
                                 canvas.drawText(subtractDates("12:20:00"), centerX - (centerX / 4) * 3, centerY + centerY / 4, mTextPaint);
 
 
                                 canvas.drawText("Экономика", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
-                                canvas.drawText("40", centerX + (centerX / 2), centerY, mTextPaint);
+                                canvas.drawText("40", centerX + (centerX / 3), centerY, mTextPaint);
                                 canvas.drawText("Отрошко", centerX + (centerX / 7), centerY + centerY/4, mTextPaint);
                             }
 
                             else if ((mTime.hour==12&&mTime.minute>=20)||(mTime.hour==13&&mTime.minute<55))
                             {
                                 canvas.drawText("Экономика", centerX - (centerX / 9) * 8, centerY - centerY / 4, mTextPaint);
-                                canvas.drawText("40", centerX - (centerX / 2), centerY, mTextPaint);
+                                canvas.drawText("40", centerX - (centerX / 3)*2, centerY, mTextPaint);
                                 canvas.drawText("Отрошко", centerX - (centerX / 7) * 6, centerY + centerY/4, mTextPaint);
 
                                 canvas.drawText("Последняя", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
@@ -715,6 +718,93 @@ public class MainWatchFace extends CanvasWatchFaceService {
                                 canvas.drawText("завтра", centerX + (centerX / 5), centerY + centerY/4, mTextPaint);
                             }
                         }
+
+
+                        else if(mTime.weekDay == 2)
+                        {
+                            if(mTime.hour < 8 || (mTime.hour==8 && mTime.minute<40)) {
+
+                                mTextPaint.setTextSize(24);
+                                canvas.drawText("До следующей", centerX - (centerX / 12) * 11, centerY - centerY / 4, mTextPaint);
+                                mTextPaint.setTextSize(30);
+                                canvas.drawText("пары", centerX - (centerX / 3)*2, centerY, mTextPaint);
+
+
+                                canvas.drawText("Python", centerX + (centerX / 6), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("306", centerX + (centerX / 3), centerY, mTextPaint);
+                                canvas.drawText("Галкин", centerX + (centerX / 6), centerY + centerY/4, mTextPaint);
+                            }
+
+                            else if ((mTime.hour==8&&mTime.minute>=40)||mTime.hour==9||(mTime.hour==10&&mTime.minute<15))
+                            {
+                                canvas.drawText("Python", centerX - (centerX / 6) * 4, centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("306", centerX - (centerX / 3)*2, centerY, mTextPaint);
+                                canvas.drawText("Галкин", centerX - (centerX / 6) * 4, centerY + centerY/4, mTextPaint);
+
+                                canvas.drawText("Иллюстратор", centerX + (centerX / 11), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("610", centerX + (centerX / 3), centerY, mTextPaint);
+                                canvas.drawText("Катеринич", centerX + (centerX / 10), centerY + centerY/4, mTextPaint);
+                            }
+                            else if (mTime.hour==10&&mTime.minute<35&&mTime.minute>=15)
+                            {
+
+                                canvas.drawText("Перемена", centerX - (centerX / 8)*7, centerY, mTextPaint);
+                                canvas.drawText(subtractDates("10:35:00"), centerX - (centerX / 4) * 3, centerY + centerY / 4, mTextPaint);
+
+
+                                canvas.drawText("Иллюстратор", centerX + (centerX / 11), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("610", centerX + (centerX / 3), centerY, mTextPaint);
+                                canvas.drawText("Катеринич", centerX + (centerX / 10), centerY + centerY/4, mTextPaint);
+                            }
+
+                            else if ((mTime.hour==10&&mTime.minute>=35)||mTime.hour==11||(mTime.hour==12&&mTime.minute<10))
+                            {
+                                canvas.drawText("Иллюстратор", centerX - (centerX / 11) * 10, centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("610", centerX - (centerX / 3)*2, centerY, mTextPaint);
+                                canvas.drawText("Катеринич", centerX - (centerX / 10) * 9, centerY + centerY/4, mTextPaint);
+
+                                canvas.drawText("Коммерция", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("42", centerX + (centerX / 3), centerY, mTextPaint);
+                                canvas.drawText("Затонацька", centerX + (centerX / 10), centerY + centerY/4, mTextPaint);
+                            }
+
+                            else if (mTime.hour==12&&mTime.minute<20&&mTime.minute>=10)
+                            {
+
+                                canvas.drawText("Перемена", centerX - (centerX / 8)*7, centerY, mTextPaint);
+                                canvas.drawText(subtractDates("12:20:00"), centerX - (centerX / 4) * 3, centerY + centerY / 4, mTextPaint);
+
+
+                                canvas.drawText("Коммерция", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("42", centerX + (centerX / 3), centerY, mTextPaint);
+                                canvas.drawText("Затонацька", centerX + (centerX / 10), centerY + centerY/4, mTextPaint);
+                            }
+
+                            else if ((mTime.hour==12&&mTime.minute>=20)||(mTime.hour==13&&mTime.minute<55))
+                            {
+                                canvas.drawText("Коммерция", centerX - (centerX / 9) * 8, centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("42", centerX - (centerX / 3)*2, centerY, mTextPaint);
+                                canvas.drawText("Затонацька", centerX - (centerX / 10) * 9, centerY + centerY/4, mTextPaint);
+
+                                canvas.drawText("Последняя", centerX + (centerX / 9), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("пара", centerX + (centerX / 4), centerY, mTextPaint);
+                                canvas.drawText("☺", centerX + (centerX / 2), centerY + centerY/4, mTextPaint);
+                            }
+
+                            else
+                            {
+                                canvas.drawText("На сегодня", centerX - (centerX / 10) * 9, centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("хватит", centerX - (centerX / 6)*5, centerY, mTextPaint);
+                                canvas.drawText("☺", centerX - (centerX / 2), centerY + centerY/4, mTextPaint);
+
+                                canvas.drawText("Отдыхай", centerX + (centerX / 7), centerY - centerY / 4, mTextPaint);
+                                canvas.drawText("до", centerX + (centerX / 2), centerY, mTextPaint);
+                                canvas.drawText("завтра", centerX + (centerX / 5), centerY + centerY/4, mTextPaint);
+                            }
+                        }
+
+
+
                     }
                     else
                     {
